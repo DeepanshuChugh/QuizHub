@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <!-- Quiz Start Button -->
+    <div class="start_btn"><button class="glow-on-hover"> <p style="display:inline">Start</p> <p style="display:inline; border: 1px solid #F7971E; border-radius: 4px; color: black; background-color: #F7971E; padding-left: 3px; padding-right: 3px; font-weight: 600;">Quiz</p></button></div>
+   
+
+    <!-- Instructions -->
+    <div class="info_box">
+        <div class="info_title">
+            <span>Instructions</span>
+        </div>
+
+        <div class="info_list">
+            <div class="info">1.  You will get <span>15 seconds</span> for each question.</div>
+            <div class="info">2. Once you select your answer, You can't unselect.</div>
+            <div class="info">3. You can't slect any option once time goes off.</div>
+            <div class="info">4. You'll get points on the basis of your correct answers.</div>
+            <div class="info">5. There will be no negative marking.</div>
+            <div class="info">6. While giving quiz you can't exit until you reach the last questtion.</div>
+        </div>
+
+        <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+
+        <header>
+            <div class="title">Quiz Application</div>
+            <div class="timer">
+                <div class="time_text">Time Left</div>
+                <div class="timer_sec">15</div>
+            </div>
+        </header>
+
+        <section>
+            <div class="que_text">
+                <!-- <span>What's Your Name?</span> -->
+                <img id="que_img" src="" alt="">
+            </div>
+
+            <div class="option_list">
+                <!-- <div class="option">
+                    <span>Lorem ipsum dolor sit.</span>
+                    <div class="icon tick"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="option">
+                    <span>Lorem ipsum dolor sit.</span>
+                    <div class="icon cross"><i class="fas fa-times"></i></div>
+                </div>
+                <div class="option">
+                    <span>Lorem ipsum dolor sit.</span>
+                </div>
+                <div class="option">
+                    <span>Lorem ipsum dolor sit.</span>
+                </div> -->
+            </div> 
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="total_que">
+                <!-- <span><p>2</p>of <p>5</p>Questions </span> -->
+            </div>
+            <button class="next_btn">Next Que</button>
+        </footer>
+    </div>
+
+     <!-- Result Box -->
+     <div class="result_box">
+        <div class="icon">
+            <iframe src="https://giphy.com/embed/icPn4EwqNpAsZQmInZ" width="280" height="150" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+        <div class="complete_text">You've completed the Quiz!</div>
+        <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
+            <!-- <span>you got <p>8</p> Out of<p>23</p> </span> -->
+        </div>
+        <div class="buttons" style="cursor:pointer ;">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit Quiz</button>
+            <button class="quit">Answers</button>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
+<script src="./questions.js"></script>
+<script src="./script.js"></script>
+
