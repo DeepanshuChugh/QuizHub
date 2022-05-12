@@ -2,6 +2,13 @@ const startButton = document.querySelector('.start_btn')
 
 const option_list = document.querySelector('.option_list');
 const infoBox = document.querySelector('.info_box')
+const timeCount=document.querySelector('.timer .timer_sec')
+const next_btn = document.querySelector('.next_btn');
+const result_box = document.querySelector('.result_box');
+const restart = document.querySelector('.buttons .restart');
+const quit = document.querySelector('.buttons .quit');
+const answers = document.querySelector('.buttons .answers');
+
 startButton.onclick = ()=>{
     infoBox.classList.add("infoBoxShow")
 }
@@ -17,19 +24,27 @@ continueButton.onclick = ()=>{
     infoBox.classList.remove("infoBoxShow")
     quizBox.classList.add("quizBoxShow")
     showQuestions(0)
+    startTimer(timeInterval)
+    
 }
 
 let queCount = 0;
-const next_btn = document.querySelector('.next_btn');
+let counter;
+let timeInterval = 15;
+
 next_btn.onclick = ()=>{
+    counter = clearInterval(counter )
+    startTimer(timeInterval)
    if(queCount<questions.length-1)
    {
     queCount++;
-    showQuestions(queCount)
+    showQuestions(queCount);
+    next_btn.style.display='none'
+  
    }
-//    else if(queCount===questions.length){
-//     next_btn.classList.add("finish")
-//    }
+   else{
+       showResultBox();
+   }
 }
 
 
@@ -62,7 +77,9 @@ const wrongTick = '<div class="icon cross"><i class="fas fa-times"></i></div>'
 
 
 
+
 function selectedOption(answer){
+    counter = clearInterval(counter )
     // console.log(answer.textContent)
     const userAnswer = answer.textContent;
     const correctAnswer= questions[queCount].answer;
@@ -99,5 +116,33 @@ function selectedOption(answer){
         option_list.children[i].classList.add("disableOptions")
         
     }
+    next_btn.style.display='block'
    
+}
+
+// Timer Function
+function startTimer(time)
+{
+    counter = setInterval(timer,1000);
+     function timer()
+        {
+            timeCount.textContent=time;
+            time--;
+            if(time<0)
+            {
+                counter = clearInterval(counter );
+                timeCount.textContent='00'
+                
+                
+            }
+        }
+    
+    console.log(timeCount.innerText)
+}
+
+function showResultBox()
+{
+    infoBox.classList.remove("infoBoxShow")
+    quizBox.classList.remove("quizBoxShow")
+    result_box.classList.add("resultBoxShow")
 }
